@@ -57,3 +57,16 @@ PLAY RECAP ************************
 target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 target2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
+### Tips & Tricks about Atom IDE with Ansible
+This [class](https://www.udemy.com/course/learn-ansible/learn/lecture/11060796#overview) will introduce you how to use [**IDE Atom**](https://atom.io/) to speed up the development process. Our first exercise here is to create a play book [`ansible-demo-exercises/exercise-1-copyfile/playbook-copyfile.yaml`](https://github.com/johnklee/ansible_beginner_handson/blob/master/ansible-demo-exercises/exercise-1-copyfile/playbook-copyfile.yaml) to leverage [**copy module**](https://docs.ansible.com/ansible/latest/modules/copy_module.html) to copy file `test.txt` to each ansible node under path `/etc/test.txt`:
+```console
+$ cd ansible-demo-exercises/exercise-1-copyfile/
+$ ansible-playbook playbook-copyfile.yaml -i ../inventory/test_targets.txt
+...
+PLAY RECAP ************
+target1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+target2                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+$ sudo docker exec -it ansible_target1 cat /etc/test.txt
+This is an testing file for copy module
+```
