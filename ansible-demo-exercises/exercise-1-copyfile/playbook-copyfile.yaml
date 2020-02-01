@@ -1,0 +1,8 @@
+-
+  name: Copy file to target servers
+  hosts: all
+  tasks:
+    - name: Copy file
+      copy:
+        src: ./test.txt
+        dest: /etc/test.txt
