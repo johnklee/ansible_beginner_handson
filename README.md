@@ -178,13 +178,13 @@ This [section](https://www.udemy.com/course/learn-ansible/learn/lecture/7133380#
 ```
 
 * Keep variables in inventory file and refer to them in playbook. e.g.:
-  - inventory file:
+inventory file:
 ```
 # Sample Inventory File
 
 localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-161
 ```
-  - playbook:
+Then is playbook:
 ```YAML
 -
     name: 'Update nameserver entry into resolv.conf file on localhost'
@@ -202,3 +202,5 @@ localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-1
                 permanent: true
                 state: disabled
 ```
+## Conditionals
+This [section](https://www.udemy.com/course/learn-ansible/learn/lecture/7133384#overview) will introduce conditionals concept in Ansible.
