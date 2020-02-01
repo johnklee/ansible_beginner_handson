@@ -1,0 +1,2 @@
+target1 ansible_host=target1 ansible_user=root
+target2 ansible_host=target2 ansible_user=root

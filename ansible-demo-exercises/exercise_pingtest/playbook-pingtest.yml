@@ -1,0 +1,6 @@
+-
+    name: Connection testing
+    hosts: all
+    tasks:
+        - name: Ping test
+          ping:
