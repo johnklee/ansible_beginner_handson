@@ -162,3 +162,43 @@ The principle that enables Ansible to be declarative and yet reliable is idempot
                 name: httpd
                 state: present
 ```
+## Ansible Variables
+This [section](https://www.udemy.com/course/learn-ansible/learn/lecture/7133380#overview) introduce variable used in Ansible.
+* Stores information that varies with each host. e.g.:
+```YAML
+-
+  name: Add DNS server to resolve.config
+  hosts: localhost
+  vars:
+    dns_server: 10.1.250.10
+  tasks:
+    - lineinfile:
+      path: /etc/resolve.conf
+      line: 'nameserver {{ dns_server }}'
+```
+
+* Keep variables in inventory file and refer to them in playbook. e.g.:
+- inventory file:
+```
+# Sample Inventory File
+
+localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-161
+```
+- playbook:
+```YAML
+-
+    name: 'Update nameserver entry into resolv.conf file on localhost'
+    hosts: localhost
+    tasks:
+        -
+            name: 'Update nameserver entry into resolv.conf file'
+            lineinfile:
+                path: /etc/resolv.conf
+                line: 'nameserver {{ nameserver_ip }}'
+        -
+            name: 'Disable SNMP Port'
+            firewalld:
+                port: {{ snmp_port }}
+                permanent: true
+                state: disabled
+```
