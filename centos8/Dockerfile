@@ -13,6 +13,7 @@ COPY ansible_node_key.pub /home/remote_user/.ssh/authorized_keys
 RUN chown remote_user:remote_user -R /home/remote_user/.ssh && \
     chmod 600 /home/remote_user/.ssh/authorized_keys
 
+RUN echo 'remote_user     ALL=(ALL:ALL)   NOPASSWD:ALL' >> /etc/sudoers
 
 RUN dnf install -y python3-pip
 RUN pip3 install awscli --upgrade
