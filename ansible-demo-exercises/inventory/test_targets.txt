@@ -1,2 +1,9 @@
-target1 ansible_host=target1 ansible_user=root
-target2 ansible_host=target2 ansible_user=root
+[all:vars]
+ansible_connection=ssh
+ansible_user=remote_user
+ansible_ssh_pass=vagrant
+ansible_ssh_private_key_file=~/.ssh/ansible_node_key
+
+[test]
+target1 ansible_host=ansible_node1
+target2 ansible_host=ansible_node2
