@@ -1,0 +1,24 @@
+version: '3'
+services:
+    ansible_node1:
+        container_name: ansible_node1
+        image: ansible_node1/centos8
+        build:
+            args:
+                node_name: node1
+            context: centos8
+        networks:
+            - net
+
+    ansible_node2:
+        container_name: ansible_node2
+        image: ansible_node2/centos8
+        build:
+            args:
+                node_name: node2
+            context: centos8
+        networks:
+            - net 
+networks:
+    net:
+
