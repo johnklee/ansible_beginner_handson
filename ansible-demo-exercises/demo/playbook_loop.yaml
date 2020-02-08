@@ -1,0 +1,18 @@
+---
+  - name: Install Softwares
+    hosts: all
+    vars:
+      packages:
+        - name: NGINX
+          required: True
+        - name: mysql
+          required: True
+        - name: apache
+          required: False
+    tasks:
+      - name: Install "{{ item.name }}" on Debian
+        apt:
+          name: "{{ item.name }}"
+          state: present
+
+        loop: "{{ packages }}"
