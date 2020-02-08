@@ -1,0 +1,20 @@
+-
+  name: Add multiple users
+  hosts: all
+  vars:
+    users:
+      - name: john
+        required: True
+      - name: peter
+        required: True
+      - name: mary
+        required: False
+      - name: jean
+        required: True
+  tasks:
+    - name: Add user
+      user:
+        name: "{{ item.name }}"
+        state: present
+      when: item.required
+      loop: "{{ users }}"
