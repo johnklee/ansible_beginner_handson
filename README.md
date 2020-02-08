@@ -204,3 +204,61 @@ Then is playbook:
 ```
 ## Conditionals
 This [section](https://www.udemy.com/course/learn-ansible/learn/lecture/7133384#overview) will introduce conditionals concept in Ansible.
+
+### Use Conditional in playbook
+From example playbook `ansible-demo-exercise/demo/playbook_cnd1.yaml`:
+```YAML
+- name: Install NGINX
+  hosts: all
+  tasks:
+    - name: Install NGINX on Debian
+      apt:
+        name: NGINX
+        state: present
+      when: ansible_os_family == "Debian" and
+            ansible_distribution_version == "16.04"
+
+    - name: Install NGINX on Redhat
+      yum:
+        name: NGINX
+        state: present
+      when: ansible_os_family == "Redhat" or
+            ansible_os_family == "SUSE"
+```
+
+### Use Look in playbook
+From example playbook `ansible-demo-exercises\demo\playbook_loop.yaml`:
+```YAML
+---
+  - name: Install Softwares
+    hosts: all
+    vars:
+      packages:
+        - name: NGINX
+          required: True
+        - name: mysql
+          required: True
+        - name: apache
+          required: False
+    tasks:
+      - name: Install "{{ item.name }}" on Debian
+        apt:
+          name: "{{ item.name }}"
+          state: present
+
+        loop: "{{ packages }}"
+```
+### Register to checkout output in condition
+From example `ansible-demo-exercises\demo\playbook_register.yaml`:
+```YAML
+- name: Check status of a service and email if its down
+  hosts: localhost
+  tasks:
+      - command: service http status
+        register: result
+      - mail:
+        to: admin@test.com
+        subject: Service Alert
+        body: Httpd Service is down
+        when: result.stdout.find('down') != -1
+```
