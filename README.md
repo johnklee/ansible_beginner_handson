@@ -269,6 +269,7 @@ This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7133
 
 ## Roles
 This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7133390#overview) will introduce [Roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html).
+![roles big picture](https://github.com/johnklee/ansible_beginner_handson/raw/master/images/roles_1.PNG)
 
 ## Advanced Topics
 This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7146644#overview) will cover advanced topics.
