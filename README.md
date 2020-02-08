@@ -276,3 +276,4 @@ This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7146
 
 ## Supplement
 * [Ansible Galaxy: Help other Ansible users by sharing the awesome roles you create.](https://galaxy.ansible.com/)
+* [FAQ - How To Add A User to Sudoers On CentOS 8](https://devconnected.com/how-to-add-a-user-to-sudoers-on-centos-8/)
