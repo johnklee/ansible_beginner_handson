@@ -203,7 +203,7 @@ Then is playbook:
                 state: disabled
 ```
 ## Conditionals
-This [section](https://www.udemy.com/course/learn-ansible/learn/lecture/7133384#overview) will introduce conditionals concept in Ansible.
+This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7133384#overview) will introduce conditionals concept in Ansible.
 
 ### Use Conditional in playbook
 From example playbook `ansible-demo-exercise/demo/playbook_cnd1.yaml`:
@@ -262,3 +262,16 @@ From example `ansible-demo-exercises\demo\playbook_register.yaml`:
         body: Httpd Service is down
         when: result.stdout.find('down') != -1
 ```
+## Loops
+This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7133388#overview) will introduce the loop. Below documents are related:
+* [Ansible 2.4 - doc - loops (with_*)](https://docs.ansible.com/ansible/2.4/playbooks_loops.html)
+* [Docs » User Guide » Working With Playbooks » Loops](https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html)
+
+## Roles
+This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7133390#overview) will introduce [Roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html).
+
+## Advanced Topics
+This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7146644#overview) will cover advanced topics.
+
+## Supplement
+* [Ansible Galaxy: Help other Ansible users by sharing the awesome roles you create.](https://galaxy.ansible.com/)
