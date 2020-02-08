@@ -1,6 +1,7 @@
 -
   name: Add multiple users
   hosts: all
+  become: True
   vars:
     users:
       - name: john
