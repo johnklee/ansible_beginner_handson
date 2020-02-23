@@ -273,6 +273,8 @@ This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7133
 
 ## Advanced Topics
 This [**section**](https://www.udemy.com/course/learn-ansible/learn/lecture/7146644#overview) will cover advanced topics.
+* [Working with dynamic inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html)
+* [Ansible module development: getting started](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_general.html)
 
 ## Supplement
 * [Ansible Galaxy: Help other Ansible users by sharing the awesome roles you create.](https://galaxy.ansible.com/)
