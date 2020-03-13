@@ -1,0 +1,11 @@
+- name: Print some debug information
+  hosts: localhost 
+  vars: 
+    msg: |
+        Ansible Distribution: {{ ansible_distribution }}
+        Ansible Dist version: {{ ansible_distribution_version }}
+  tags: debug_info
+  tasks:
+  - name: debug
+    debug:
+        msg: "{{ msg.split('\n') }}"  
